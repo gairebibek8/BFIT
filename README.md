@@ -3,11 +3,6 @@
 
 ## Run Locally
 
-Inside the project folder
-
-```bash
-  npx create-react-app client  
-```
 
 Go to 
 ```bash
