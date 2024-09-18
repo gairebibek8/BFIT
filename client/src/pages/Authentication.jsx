@@ -3,7 +3,9 @@ import React, { useState } from 'react'
 
 import styled from "styled-components";
 import LogoImage from "../utils/Images/Logo.png";
-import AuthImage from "../utils/Images/bfit.jpg";
+import AuthImage from "../utils/Images/AuthImage.jpg";
+import SignIn from '../components/SignIn';
+import SignUp from '../components/SignUp';
 
 const Container = styled.div`
   flex: 1;
@@ -69,16 +71,22 @@ const Authentication = () => {
         <Logo src={LogoImage}/>
         <Image src={AuthImage}/>
     </Left>
-    <Right>{!login ? (<>
-    <Text>
-       Don't Have an account? <TextButton onClick={() => setLogin(true)}>SignUp</TextButton></Text>
+    <Right>
+      {!login ? (
+        <>
+        <SignIn />
+        <Text>
+          Don't Have an account? {" "}
+          <TextButton onClick={() => setLogin(true)}>SignUp</TextButton>
+        </Text>
        </>
       ) : (
       <>
-        <Text>Already have an account? <TextButton onClick={() => setLogin(false)}>SignIn</TextButton></Text>
+      <SignUp />
+        <Text>Already have an account? {" "} <TextButton onClick={() => setLogin(false)}>SignIn</TextButton></Text>
       </>)}
     </Right>
   </Container>
 }
 
-export default Authentication;
+export default Authentication
